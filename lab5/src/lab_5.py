@@ -67,7 +67,7 @@ def write_output_file(filename, result, path):
 
 
 if __name__ == "__main__":
-    start, end, matrix = read_input_file("input.txt")
+    start, end, matrix = read_input_file("../test/input.txt")
     path = dfs(matrix, start, end)
 
     if path:

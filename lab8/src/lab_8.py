@@ -10,7 +10,7 @@ def read_adjacency_matrix(filename):
             matrix.append([float(cell) for cell in row])
     return matrix
 
-def draw_graph(matrix):
+def build_graph(matrix):
     G = nx.Graph()
     n = len(matrix)
 
@@ -19,7 +19,10 @@ def draw_graph(matrix):
             weight = matrix[i][j]
             if weight > 0:
                 G.add_edge(i, j, weight=weight)
+    return G
 
+def draw_graph(matrix):
+    G = build_graph(matrix)
     pos = nx.spring_layout(G, seed=42)
     edge_labels = nx.get_edge_attributes(G, 'weight')
 
@@ -28,6 +31,6 @@ def draw_graph(matrix):
     plt.title("Візуалізація графа ")
     plt.show()
 
-
-matrix = read_adjacency_matrix('islands.csv')
-draw_graph(matrix)
+if __name__ == '__main__':
+    matrix = read_adjacency_matrix('islands.csv')
+    draw_graph(matrix)

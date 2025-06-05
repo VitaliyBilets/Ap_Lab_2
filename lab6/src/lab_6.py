@@ -38,10 +38,10 @@ def topological_sort(graph, in_degree):
     return result
 
 def main():
-    graph, in_degree = read_dependencies("govern.in")
+    graph, in_degree = read_dependencies("../test/govern.in")
     order = topological_sort(graph, in_degree)
     print("Order:", order)
-    with open("govern.out", "w") as f:
+    with open("../test/govern.out", "w") as f:
         for item in order:
             f.write(item + "\n")
 

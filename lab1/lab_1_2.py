@@ -29,7 +29,7 @@ def plan_seds(matrix):
 
     return result
 
-    return result
+
 class Test(unittest.TestCase):
 
        def test_rectangular_matrix(self):
